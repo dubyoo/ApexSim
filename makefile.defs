@@ -1,0 +1,12 @@
+DEBUG_INCLUDES := -g -I$(ACE_ROOT) -I$(SWB_PROJECT_ROOT)/Sources/Common/Interface -I$(SWB_PROJECT_ROOT)/Sources/Common -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/ACE_Helpers -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/InternalWD -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/SwbLogger -I$(SWB_PROJECT_ROOT)/Sources/Common/Framework -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/STL_Wrappers
+
+DEBUG_LDFLAGS := -g -L$(ACE_ROOT)/lib -L$(SWB_PROJECT_ROOT)/Builds/lib   -L$(SWB_PROJECT_ROOT)/Sources/test/lib 
+
+DEBUG_LIBS :=   -lClient -lidl -lCommon -lFramework -lSTL_Wrappers -lACE_Helpers -lInternalWD -lSwbLogger -lBbnParam -lFileObjects -lACE  
+
+RELEASE_INCLUDES := -I$(ACE_ROOT) -I$(SWB_PROJECT_ROOT)/Sources/Common/Interface -I$(SWB_PROJECT_ROOT)/Sources/Common -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/ACE_Helpers -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/InternalWD -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/SwbLogger -I$(SWB_PROJECT_ROOT)/Sources/Common/Framework -I$(SWB_PROJECT_ROOT)/Sources/Common/Helper/STL_Wrappers
+
+RELEASE_LDFLAGS := -L$(ACE_ROOT)/lib -L$(SWB_PROJECT_ROOT)/Builds/lib   -L$(SWB_PROJECT_ROOT)/Sources/test/lib 
+
+RELEASE_LIBS :=    -lClient -lidl -lCommon -lFramework -lSTL_Wrappers -lACE_Helpers -lInternalWD -lSwbLogger -lBbnParam -lFileObjects -lACE  
+
