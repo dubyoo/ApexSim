@@ -31,18 +31,30 @@ void DbcReqParser::Parse()
 	printf("[TRACE] DbcReqParser::Parse  Parse begin!\n");
 
 	if (!ParseHeader())
+	{
+		printf("[ERROR] Fail to parse header\n");
 		return;
+	}
 
 	if (!ParseTSID())
+	{
+		printf("[ERROR] Fail to parse TSID\n");
 		return;
+	}
 
 	if (!ParseCMMAC())
+	{
+		printf("[ERROR] Fail to parse CMMAC\n");
 		return;
+	}
 
 	if (!ParsePayload())
+	{
+		printf("[ERROR] Fail to parse DBC-REQ Payload\n");
 		return;
+	}
 	
-	printf("[TRACE] DbcReqParser::Parse  Parse Completed!\n");
+	printf("[TRACE] DbcReqParser::Parse  Parse complete!\n");
 }
 
 bool DbcReqParser::ParseHeader()

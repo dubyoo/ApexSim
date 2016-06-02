@@ -61,8 +61,17 @@ int CDbcReqUDPSession::handle_input(ACE_HANDLE fd /*= ACE_INVALID_HANDLE*/)
 		return (-1);
 	}
 
-//	cout << "[DEBUG] recv(" << rawMsg->mRemoteAddr.get_ip_address() << "): " << rawMsg->mReadBuff << endl;
+	// print 24 bytes
+	cout << "[DEBUG] recv(" << rawMsg->m_remoteAddr.get_ip_address() << "):" << endl;
+	for (int i = 0; i < 24; i++)
+	{
+		printf("%02x ", rawMsg->m_readBuff[i]);
+		if (i % 4 == 3)
+			printf("\n");
+	}
+	printf("...\n");
 
+	// Parse DBC-REQ
 	DbcReqParser parser(rawMsg->m_readBuff);
 	parser.Parse();
 

@@ -40,7 +40,7 @@ debug: $(DEBUG_OBJS)
 	$(MAKE) --no-print-directory debug-post-build
 
 clean:
-	-$(RM) $(RELEASE_OBJS) $(DEBUG_OBJS) $(RELEASE_CPP_DEPS) $(DEBUG_CPP_DEPS) Release/$(TARGET) Debug/$(TARGET)
+	-$(RM) $(RELEASE_OBJS) $(DEBUG_OBJS) $(RELEASE_CPP_DEPS) $(DEBUG_CPP_DEPS) Release/$(TARGET) Debug/$(TARGET) Bin/$(TARGET)
 	-$(RM) $(SWB_PROJECT_ROOT)/Builds/bin/$(TARGET)
 	-$(RM) $(SWB_PROJECT_ROOT)/Builds/bind/$(TARGET)
 	-@echo ' '
