@@ -21,7 +21,7 @@ public:
 private:
 	BYTE  type_;
 	ULONG length_;
-	BYTE  value_[MAX_DATA_SIZE];
+	BYTE* value_;
 };
 
 

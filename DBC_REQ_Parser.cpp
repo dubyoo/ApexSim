@@ -241,6 +241,7 @@ bool DbcReqParser::ParseReceiveChannelConfiguration()
 TLV::TLV(const BYTE * buf)
 	: type_(0)
 	, length_(0)
+	, value_(NULL)
 {
 	if (NULL == buf)
 	{
@@ -249,12 +250,17 @@ TLV::TLV(const BYTE * buf)
 	}
 	type_ = *buf++;
 	length_ = *buf++;
+	value_ = new BYTE(length_);
 	memcpy(value_, buf, length_);
 }
 
 TLV::~TLV()
 {
-
+	if (value_ != NULL)
+	{
+		delete value_;
+		value_ = NULL;
+	}
 }
 
 void TLV::PrintDec()
