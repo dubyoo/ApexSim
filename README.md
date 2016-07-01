@@ -4,7 +4,7 @@ This is a simple APEX3000 simulator.
 
 test case:
 
-char send_buf[1024] = 
+	char send_buf[1024] = 
 	{ 
 		0x81, 0x01, 0x00, 0x46,		// header
 		0x01, 0x02, 0x03, 0xE8,		// TSID
